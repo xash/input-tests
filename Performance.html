@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="UTF-8"><title>Performance</title><script type="text/javascript" src="elm-runtime.js"></script><script type="text/javascript">Elm.Main = Elm.Main || {};
+Elm.Main.make = function (_elm) {
+   _elm.Main = _elm.Main || {};
+   if (_elm.Main.values)
+   return _elm.Main.values;
+   var N = Elm.Native,
+   _N = N.Utils.make(_elm),
+   _L = N.List.make(_elm),
+   _E = N.Error.make(_elm),
+   _J = N.JavaScript.make(_elm),
+   $moduleName = "Main";
+   var Text = Elm.Text.make(_elm);
+   var Text = Elm.Text.make(_elm);
+   var Basics = Elm.Basics.make(_elm);
+   var Signal = Elm.Signal.make(_elm);
+   var List = Elm.List.make(_elm);
+   var Maybe = Elm.Maybe.make(_elm);
+   var Time = Elm.Time.make(_elm);
+   var Prelude = Elm.Prelude.make(_elm);
+   var Graphics = Graphics || {};
+   Graphics.Element = Elm.Graphics.Element.make(_elm);
+   var Color = Elm.Color.make(_elm);
+   var Graphics = Graphics || {};
+   Graphics.Collage = Elm.Graphics.Collage.make(_elm);
+   var Graphics = Graphics || {};
+   Graphics.Input = Elm.Graphics.Input.make(_elm);
+   var _op = {};
+   var box = Graphics.Element.color(Color.black)(A3(Graphics.Element.container,
+   100,
+   100,
+   Graphics.Element.middle)(Graphics.Element.empty));
+   var main = A2(Graphics.Element.flow,
+   Graphics.Element.down,
+   _J.toList([Text.plainText("1 Layer")
+             ,box
+             ,Text.plainText("200 Layers")
+             ,Graphics.Element.layers(A2(List.repeat,
+             200,
+             box))
+             ,Text.plainText("200 Layers + 1 hoverable Layer on top")
+             ,Graphics.Element.layers(_L.append(A2(List.repeat,
+             200,
+             box),
+             _J.toList([Basics.fst(Graphics.Input.hoverable(box))])))]));
+   _elm.Main.values = {_op: _op
+                      ,box: box
+                      ,main: main};
+   return _elm.Main.values;
+};</script></head><body><script type="text/javascript">Elm.fullscreen(Elm.Main)</script><noscript></noscript></body></html>
