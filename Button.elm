@@ -17,6 +17,6 @@ overlay = empty |> container 200 200 middle
                 |> opacity 0.3
  
 main = (\a -> layers [flow down (fst hover `beside` fst but `beside` fst cBut :: a)
-                      ])--overlay])
+                      , overlay])
        <~ combine [lift asText (snd hover), fst check, fst dMenu,
                    fst tMail, fst tPass, fst tField]
