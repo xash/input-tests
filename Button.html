@@ -60,14 +60,15 @@ Elm.Main.make = function (_elm) {
    var main = A2(Signal._op["<~"],
    function (a) {
       return Graphics.Element.layers(_J.toList([A2(Graphics.Element.flow,
-      Graphics.Element.down,
-      {ctor: "::"
-      ,_0: A2(Graphics.Element.beside,
-      A2(Graphics.Element.beside,
-      Basics.fst(hover),
-      Basics.fst(but)),
-      Basics.fst(cBut))
-      ,_1: a})]));
+                                               Graphics.Element.down,
+                                               {ctor: "::"
+                                               ,_0: A2(Graphics.Element.beside,
+                                               A2(Graphics.Element.beside,
+                                               Basics.fst(hover),
+                                               Basics.fst(but)),
+                                               Basics.fst(cBut))
+                                               ,_1: a})
+                                               ,overlay]));
    },
    Signal.combine(_J.toList([A2(Signal.lift,
                             Text.asText,
