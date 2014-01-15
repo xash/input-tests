@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="UTF-8"><title>Tooltip</title><script type="text/javascript" src="elm-runtime.js"></script><script type="text/javascript">Elm.Main = Elm.Main || {};
+Elm.Main.make = function (_elm) {
+   _elm.Main = _elm.Main || {};
+   if (_elm.Main.values)
+   return _elm.Main.values;
+   var N = Elm.Native,
+   _N = N.Utils.make(_elm),
+   _L = N.List.make(_elm),
+   _E = N.Error.make(_elm),
+   _J = N.JavaScript.make(_elm),
+   $moduleName = "Main";
+   var Text = Elm.Text.make(_elm);
+   var Text = Elm.Text.make(_elm);
+   var Basics = Elm.Basics.make(_elm);
+   var Signal = Elm.Signal.make(_elm);
+   var List = Elm.List.make(_elm);
+   var Maybe = Elm.Maybe.make(_elm);
+   var Time = Elm.Time.make(_elm);
+   var Prelude = Elm.Prelude.make(_elm);
+   var Graphics = Graphics || {};
+   Graphics.Element = Elm.Graphics.Element.make(_elm);
+   var Color = Elm.Color.make(_elm);
+   var Graphics = Graphics || {};
+   Graphics.Collage = Elm.Graphics.Collage.make(_elm);
+   var Window = Elm.Window.make(_elm);
+   var Mouse = Elm.Mouse.make(_elm);
+   var Graphics = Graphics || {};
+   Graphics.Input = Elm.Graphics.Input.make(_elm);
+   var _op = {};
+   var tip1 = A3(Graphics.Element.container,
+   150,
+   150,
+   Graphics.Element.bottomRight)(Graphics.Element.color(Color.blue)(A3(Graphics.Element.container,
+   100,
+   100,
+   Graphics.Element.middle)(Graphics.Element.empty)));
+   var tip2 = Basics.fst(Graphics.Input.hoverable(tip1));
+   var box = Graphics.Element.color(Color.green)(A3(Graphics.Element.container,
+   100,
+   100,
+   Graphics.Element.middle)(Graphics.Element.empty));
+   var box1 = Graphics.Input.hoverable(box);
+   var box2 = Graphics.Input.hoverable(box);
+   var main = A2(Signal._op["~"],
+   A2(Signal._op["<~"],
+   F2(function (h1,h2) {
+      return A2(Graphics.Element.above,
+      A3(Graphics.Element.container,
+      200,
+      200,
+      Graphics.Element.topLeft)(Graphics.Element.above(Text.plainText("Tooltip isn\'t hoverable"))(Graphics.Element.layers(_J.toList([Basics.fst(box1)
+                                                                                                                                     ,h1 ? tip1 : Graphics.Element.empty])))),
+      A3(Graphics.Element.container,
+      200,
+      200,
+      Graphics.Element.topLeft)(Graphics.Element.above(Text.plainText("Tooltip is hoverable"))(Graphics.Element.layers(_J.toList([Basics.fst(box2)
+                                                                                                                                 ,h2 ? tip2 : Graphics.Element.empty])))));
+   }),
+   Basics.snd(box1)),
+   Basics.snd(box2));
+   _elm.Main.values = {_op: _op
+                      ,box: box
+                      ,box1: box1
+                      ,box2: box2
+                      ,tip1: tip1
+                      ,tip2: tip2
+                      ,main: main};
+   return _elm.Main.values;
+};</script></head><body><script type="text/javascript">Elm.fullscreen(Elm.Main)</script><noscript></noscript></body></html>

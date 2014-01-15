@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="UTF-8"><title>Button</title><script type="text/javascript" src="elm-runtime.js"></script><script type="text/javascript">Elm.Main = Elm.Main || {};
+Elm.Main.make = function (_elm) {
+   _elm.Main = _elm.Main || {};
+   if (_elm.Main.values)
+   return _elm.Main.values;
+   var N = Elm.Native,
+   _N = N.Utils.make(_elm),
+   _L = N.List.make(_elm),
+   _E = N.Error.make(_elm),
+   _J = N.JavaScript.make(_elm),
+   $moduleName = "Main";
+   var Text = Elm.Text.make(_elm);
+   var Text = Elm.Text.make(_elm);
+   var Basics = Elm.Basics.make(_elm);
+   var Signal = Elm.Signal.make(_elm);
+   var List = Elm.List.make(_elm);
+   var Maybe = Elm.Maybe.make(_elm);
+   var Time = Elm.Time.make(_elm);
+   var Prelude = Elm.Prelude.make(_elm);
+   var Graphics = Graphics || {};
+   Graphics.Element = Elm.Graphics.Element.make(_elm);
+   var Color = Elm.Color.make(_elm);
+   var Graphics = Graphics || {};
+   Graphics.Collage = Elm.Graphics.Collage.make(_elm);
+   var Mouse = Elm.Mouse.make(_elm);
+   var Graphics = Graphics || {};
+   Graphics.Input = Elm.Graphics.Input.make(_elm);
+   var _op = {};
+   var tPass = Graphics.Input.password("Don\'t know me");
+   var tMail = Graphics.Input.email("foo@bar.com");
+   var tField = Graphics.Input.field("Field");
+   var overlay = Graphics.Element.opacity(0.3)(Graphics.Element.color(Color.green)(A3(Graphics.Element.container,
+   200,
+   200,
+   Graphics.Element.middle)(Graphics.Element.empty)));
+   var dMenu = Graphics.Input.dropDown(_J.toList([{ctor: "_Tuple2"
+                                                  ,_0: "First"
+                                                  ,_1: 1}
+                                                 ,{ctor: "_Tuple2"
+                                                  ,_0: "Second"
+                                                  ,_1: 2}]));
+   var check = Graphics.Input.checkbox(true);
+   var but = Graphics.Input.button("Click Me!");
+   var box = Graphics.Element.color(Color.blue)(A3(Graphics.Element.container,
+   50,
+   50,
+   Graphics.Element.middle)(Graphics.Element.empty));
+   var cBut = A3(Graphics.Input.customButton,
+   A2(Graphics.Element.color,
+   Color.blue,
+   box),
+   A2(Graphics.Element.color,
+   Color.yellow,
+   box),
+   A2(Graphics.Element.color,
+   Color.red,
+   box));
+   var hover = Graphics.Input.hoverable(box);
+   var main = A2(Signal._op["<~"],
+   function (a) {
+      return Graphics.Element.layers(_J.toList([A2(Graphics.Element.flow,
+      Graphics.Element.down,
+      {ctor: "::"
+      ,_0: A2(Graphics.Element.beside,
+      A2(Graphics.Element.beside,
+      Basics.fst(hover),
+      Basics.fst(but)),
+      Basics.fst(cBut))
+      ,_1: a})]));
+   },
+   Signal.combine(_J.toList([A2(Signal.lift,
+                            Text.asText,
+                            Basics.snd(hover))
+                            ,Basics.fst(check)
+                            ,Basics.fst(dMenu)
+                            ,Basics.fst(tMail)
+                            ,Basics.fst(tPass)
+                            ,Basics.fst(tField)])));
+   _elm.Main.values = {_op: _op
+                      ,but: but
+                      ,cBut: cBut
+                      ,tField: tField
+                      ,tPass: tPass
+                      ,tMail: tMail
+                      ,check: check
+                      ,dMenu: dMenu
+                      ,hover: hover
+                      ,box: box
+                      ,overlay: overlay
+                      ,main: main};
+   return _elm.Main.values;
+};</script></head><body><script type="text/javascript">Elm.fullscreen(Elm.Main)</script><noscript></noscript></body></html>
